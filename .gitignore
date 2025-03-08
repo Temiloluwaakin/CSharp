@@ -1,0 +1,19 @@
+# Ignore Visual Studio files
+.vs/
+*.vsidx
+*.suo
+*.user
+*.db
+*.log
+
+# Ignore compiled files
+bin/
+obj/
+
+# Ignore build files
+*.dll
+*.exe
+*.pdb
+
+# Ignore environment files
+.env
