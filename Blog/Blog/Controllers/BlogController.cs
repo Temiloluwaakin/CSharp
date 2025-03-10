@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Blog.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller]/[action]")]
     [ApiController]
     public class BlogController : ControllerBase
     {
@@ -17,12 +17,33 @@ namespace Blog.Controllers
             _blogPostService = blogPostService;
         }
 
+
+
+
+
+
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<PostDto>>> GetPostsByUser(int id)
+        {
+            var posts = await _blogPostService.GetPostsByUser(id);
+            return Ok(posts);
+        }
+
+
+
+
+
+
         [HttpGet]
         public async Task<ActionResult<IEnumerable<PostDto>>> GetAllPosts()
         {
             var posts = await _blogPostService.GetAllBlogPost();
             return Ok(posts);
         }
+
+
+
+
 
         [HttpGet("{id}")]
         public async Task<ActionResult<PostDto>> GetPostById(int id)
@@ -34,6 +55,10 @@ namespace Blog.Controllers
             }
             return Ok(post);
         }
+
+
+
+
 
         [HttpPost]
         public async Task<IActionResult> CreatePost(PostDto postDto)

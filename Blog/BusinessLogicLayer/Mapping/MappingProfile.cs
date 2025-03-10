@@ -14,6 +14,9 @@ namespace BusinessLogicLayer.Mapping
         public MappingProfile()
         {
             CreateMap<Post, PostDto>().ReverseMap();
+            CreateMap<UserDto, User>().ReverseMap().ForMember(dest => dest.Posts, opt => opt.MapFrom(src => src.Post));
+
+
         }
     }
 }

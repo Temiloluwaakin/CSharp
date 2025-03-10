@@ -14,7 +14,7 @@ namespace BusinessLogicLayer.IService
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        Task<PostDto> GetAllBlogPost();
+        Task<List<PostDto>> GetAllBlogPost();
 
 
         /// <summary>
@@ -32,5 +32,13 @@ namespace BusinessLogicLayer.IService
         /// <param name="blogPostDto"></param>
         /// <returns></returns>
         Task CreateBlogPost(PostDto blogPostDto);
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        Task<List<PostDto>> GetPostsByUser(int id);
     }
 }

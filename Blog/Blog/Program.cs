@@ -15,6 +15,9 @@ builder.Services.AddDbContext<AppDbContext>(options => options.UseNpgsql(builder
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 builder.Services.AddAutoMapper(typeof(MappingProfile));
 builder.Services.AddScoped<IBlogService, BlogService>();
+builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
+
 //builder.Services.AddScoped<ICategory, CategoryRepository>();
 //builder.Services.AddScoped<IProduct, ProductRepository>();
 //builder.Services.AddScoped<ICategoryService, CategoryService>();

@@ -23,6 +23,7 @@ namespace BusinessLogicLayer.Services
             _mapper = mapper;
         }
 
+
         public async Task<PostDto> GetPostById(int id)
         {
             var post = await _repository.GetByIdAsync(id);
@@ -30,11 +31,29 @@ namespace BusinessLogicLayer.Services
         }
 
 
-        public async Task<PostDto>  GetAllBlogPost()
+
+
+
+        public async Task<List<PostDto>> GetPostsByUser(int userId)
         {
+            // Fetch all posts from repository and filter by UserId
             var posts = await _repository.GetAllAsync();
-            return _mapper.Map<PostDto>(posts);
+            var userPosts = posts.Where(p => p.UserId == userId).ToList();
+
+            return _mapper.Map<List<PostDto>>(userPosts);  // Map filtered posts
         }
+
+
+
+
+        public async Task<List<PostDto>> GetAllBlogPost()
+        {
+
+            var posts = await _repository.GetAllAsync();
+            return _mapper.Map<List<PostDto>>(posts);
+
+        }
+
 
 
         public async Task CreateBlogPost(PostDto postDto)
@@ -43,6 +62,11 @@ namespace BusinessLogicLayer.Services
             await _repository.AddAsync(post);
             await _repository.SaveChangesAsync();
         }
+
+        
+
+
+
 
         //Task<PostDto> IBlogService.GetAllBlogPost()
         //{
