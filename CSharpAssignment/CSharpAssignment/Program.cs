@@ -1,4 +1,5 @@
 ﻿using CSharpAssignment.QuestionOne;
+using CSharpAssignment.QuestionTwo;
 
 namespace CSharpAssignment
 {
@@ -7,22 +8,28 @@ namespace CSharpAssignment
         static void Main(string[] args)
         {
             //Question1
-            IsNumberValid.IsInputValidNumber();
+            //IsNumberValid.IsInputValidNumber();
 
-            //MaxNumberAssignment2.MaxNumber();
+            //MaxNumberTwo.MaxNumber();
 
-            //LandScapePortraitAssignmnet3.LandScapePortrait();
+            //LandScapePortraitThree.LandScapePortrait();
 
-            //SpeedCameraAssignment4.CheckSpeed();
+            //SpeedCamera.CheckSpeed();
+
+
+
 
             //Question2
-            //Divideby3Assignment1.Divideby3();
+            //DivideByThree.Divideby3();
 
-            //EnterNumberAssignment2.EnterNumber();
-            //FactoialAssignment3.FactoialShell();
+            //EnterNumber.EnterNumbers();
 
-            //SecretNumberAssignment4.SecretNumber();
-            // MaxRandomAssignment5.MaxRandom();
+            //FactorialThree.FactoialShell();
+
+            //SecretNumberFour.SecretNumber();
+
+            //MaxRandom.MaxRandomNumber();
+
 
 
             Console.WriteLine("the end");
